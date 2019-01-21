@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F2104" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ClosestPoint" representedClassName=".ClosestPoint" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dotValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="connectResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConnectResult" inverseName="closestPoint" inverseEntity="ConnectResult" syncable="YES"/>
+        <relationship name="visResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VisResult" inverseName="closestPoints" inverseEntity="VisResult" syncable="YES"/>
+    </entity>
+    <entity name="ColorResult" representedClassName=".ColorResult" syncable="YES">
+        <attribute name="correct" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="incorrect" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="deviceAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="colorResult" inverseEntity="DeviceAcceleration" syncable="YES"/>
+    </entity>
+    <entity name="ConnectResult" representedClassName=".ConnectResult" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="maxXAcceleration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxYAcceleration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxZAcceleration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="closestPoint" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ClosestPoint" inverseName="connectResult" inverseEntity="ClosestPoint" syncable="YES"/>
+        <relationship name="deviceAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="connectResult" inverseEntity="DeviceAcceleration" syncable="YES"/>
+        <relationship name="point" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Point" inverseName="connectResult" inverseEntity="Point" syncable="YES"/>
+        <relationship name="stylusAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StylusAcceleration" inverseName="connectResult" inverseEntity="StylusAcceleration" syncable="YES"/>
+    </entity>
+    <entity name="DeviceAcceleration" representedClassName=".DeviceAcceleration" syncable="YES">
+        <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="z" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="circleAccel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MotorResult" inverseName="circleAccel" inverseEntity="MotorResult" syncable="YES"/>
+        <relationship name="colorResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ColorResult" inverseName="deviceAcceleration" inverseEntity="ColorResult" syncable="YES"/>
+        <relationship name="connectResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConnectResult" inverseName="deviceAcceleration" inverseEntity="ConnectResult" syncable="YES"/>
+        <relationship name="fallingBallResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FallingBallResult" inverseName="deviceAcceleration" inverseEntity="FallingBallResult" syncable="YES"/>
+        <relationship name="memoryResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MemoryResult" inverseName="deviceAcceleration" inverseEntity="MemoryResult" syncable="YES"/>
+        <relationship name="motorResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MotorResult" inverseName="deviceAcceleration" inverseEntity="MotorResult" syncable="YES"/>
+        <relationship name="pictureResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PictureResult" inverseName="deviceAcceleration" inverseEntity="PictureResult" syncable="YES"/>
+        <relationship name="signatureResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SignatureResult" inverseName="deviceAcceleration" inverseEntity="SignatureResult" syncable="YES"/>
+        <relationship name="squareAccel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MotorResult" inverseName="squareAccel" inverseEntity="MotorResult" syncable="YES"/>
+        <relationship name="traceResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TraceResult" inverseName="deviceAcceleration" inverseEntity="TraceResult" syncable="YES"/>
+        <relationship name="visResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VisResult" inverseName="deviceAcceleration" inverseEntity="VisResult" syncable="YES"/>
+    </entity>
+    <entity name="FallingBallResult" representedClassName=".FallingBallResult" syncable="YES">
+        <attribute name="averageDistance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="averageInnerDist" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hits" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="practiceAverageDist" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="practiceAverageInnerDist" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="practiceHits" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="deviceAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="fallingBallResult" inverseEntity="DeviceAcceleration" syncable="YES"/>
+    </entity>
+    <entity name="MemoryResult" representedClassName=".MemoryResult" syncable="YES">
+        <attribute name="elapsedTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="deviceAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="memoryResult" inverseEntity="DeviceAcceleration" syncable="YES"/>
+    </entity>
+    <entity name="MotorResult" representedClassName=".MotorResult" syncable="YES">
+        <attribute name="speech" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="circleAccel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="circleAccel" inverseEntity="DeviceAcceleration" syncable="YES"/>
+        <relationship name="deviceAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="motorResult" inverseEntity="DeviceAcceleration" syncable="YES"/>
+        <relationship name="squareAccel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="squareAccel" inverseEntity="DeviceAcceleration" syncable="YES"/>
+    </entity>
+    <entity name="PictureResult" representedClassName=".PictureResult" syncable="YES">
+        <attribute name="correct" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="incorrect" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="deviceAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="pictureResult" inverseEntity="DeviceAcceleration" syncable="YES"/>
+    </entity>
+    <entity name="Point" representedClassName=".Point" syncable="YES">
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="connectResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConnectResult" inverseName="point" inverseEntity="ConnectResult" syncable="YES"/>
+        <relationship name="signatureResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SignatureResult" inverseName="point" inverseEntity="SignatureResult" syncable="YES"/>
+        <relationship name="traceResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TraceResult" inverseName="point" inverseEntity="TraceResult" syncable="YES"/>
+        <relationship name="visResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VisResult" inverseName="point" inverseEntity="VisResult" syncable="YES"/>
+    </entity>
+    <entity name="SignatureResult" representedClassName=".SignatureResult" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="maxXAcceleration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxYAcceleration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxZAcceleration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="deviceAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="signatureResult" inverseEntity="DeviceAcceleration" syncable="YES"/>
+        <relationship name="point" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Point" inverseName="signatureResult" inverseEntity="Point" syncable="YES"/>
+        <relationship name="stylusAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StylusAcceleration" inverseName="signatureResult" inverseEntity="StylusAcceleration" syncable="YES"/>
+    </entity>
+    <entity name="StylusAcceleration" representedClassName=".StylusAcceleration" syncable="YES">
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="z" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="connectResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConnectResult" inverseName="stylusAcceleration" inverseEntity="ConnectResult" syncable="YES"/>
+        <relationship name="signatureResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SignatureResult" inverseName="stylusAcceleration" inverseEntity="SignatureResult" syncable="YES"/>
+        <relationship name="traceResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TraceResult" inverseName="stylusAcceleration" inverseEntity="TraceResult" syncable="YES"/>
+        <relationship name="visResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VisResult" inverseName="stylusAcceleration" inverseEntity="VisResult" syncable="YES"/>
+    </entity>
+    <entity name="TraceResult" representedClassName=".TraceResult" syncable="YES">
+        <attribute name="averageDistance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="crossedOutline" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="firstDistance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="firstLastDistance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxSpeed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxXAcceleration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxYAcceleration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxZAcceleration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="speech" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="totalDistance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="deviceAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="traceResult" inverseEntity="DeviceAcceleration" syncable="YES"/>
+        <relationship name="point" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Point" inverseName="traceResult" inverseEntity="Point" syncable="YES"/>
+        <relationship name="stylusAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StylusAcceleration" inverseName="traceResult" inverseEntity="StylusAcceleration" syncable="YES"/>
+    </entity>
+    <entity name="VisResult" representedClassName=".VisResult" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="closestPoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ClosestPoint" inverseName="visResult" inverseEntity="ClosestPoint" syncable="YES"/>
+        <relationship name="deviceAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceAcceleration" inverseName="visResult" inverseEntity="DeviceAcceleration" syncable="YES"/>
+        <relationship name="point" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Point" inverseName="visResult" inverseEntity="Point" syncable="YES"/>
+        <relationship name="stylusAcceleration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StylusAcceleration" inverseName="visResult" inverseEntity="StylusAcceleration" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="StylusAcceleration" positionX="295" positionY="-292" width="128" height="165"/>
+        <element name="ClosestPoint" positionX="295" positionY="38" width="128" height="150"/>
+        <element name="ColorResult" positionX="135" positionY="-162" width="128" height="90"/>
+        <element name="ConnectResult" positionX="-56" positionY="89" width="128" height="180"/>
+        <element name="FallingBallResult" positionX="117" positionY="-324" width="128" height="150"/>
+        <element name="MotorResult" positionX="144" positionY="-153" width="128" height="105"/>
+        <element name="PictureResult" positionX="126" positionY="-171" width="128" height="90"/>
+        <element name="Point" positionX="295" positionY="-117" width="128" height="150"/>
+        <element name="SignatureResult" positionX="-56" positionY="-82" width="128" height="180"/>
+        <element name="TraceResult" positionX="-56" positionY="-333" width="128" height="270"/>
+        <element name="VisResult" positionX="117" positionY="-180" width="128" height="120"/>
+        <element name="DeviceAcceleration" positionX="117" positionY="-180" width="128" height="255"/>
+        <element name="MemoryResult" positionX="126" positionY="-171" width="128" height="75"/>
+    </elements>
+</model>

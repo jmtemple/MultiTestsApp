@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EFAA2E12ABFF3A1B1CCC39C5D091CB991403A024",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EFAA2E12ABFF3A1B1CCC39C5D091CB991403A024" : 9223372036854775807,
+    "28E9204B86AFC0DBA92C65B6730EB6D37A220B6C" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7EC66992-65DC-435B-B1FE-B6436781758C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EFAA2E12ABFF3A1B1CCC39C5D091CB991403A024" : "MultiTestsApp\/",
+    "28E9204B86AFC0DBA92C65B6730EB6D37A220B6C" : "..\/Downloads\/Adonit-iOS-SDK-master"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MultiTestsApp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MultiTestsApp\/MultiTestsApp.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Adonit\/Adonit-iOS-SDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "28E9204B86AFC0DBA92C65B6730EB6D37A220B6C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ndmobilecomplab\/MultiTestsApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EFAA2E12ABFF3A1B1CCC39C5D091CB991403A024"
+    }
+  ]
+}
